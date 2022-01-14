@@ -20,6 +20,9 @@ class Animal{
     get img(){
         return this.#img;
     }
+    get comentarios(){
+        return this.#comentarios;
+    }
     set comentarios(nuevoComentario){
          this.#comentarios = nuevoComentario;
     }

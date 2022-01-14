@@ -10,7 +10,10 @@ class Lobo extends Animal{
     constructor(nombre,edad,img,comentarios,sonido){
         super (nombre,edad,img,comentarios,sonido);
     }
-    Aullar(){}
+    Aullar(){
+        //src => audio.setAttribute('src',¿qui va la ruta del audio?)
+        //
+    }
 }
 
 class Oso extends Animal{
