@@ -1,6 +1,5 @@
 import Animales from './datosAnimales.js';
 import {Leon, Lobo, Oso, Serpiente, Aguila} from "./tipos.js";
-import Animal from "./animal.js";
 
 // Declaracion de variables globales
 var seleccionAnimal;
@@ -19,6 +18,8 @@ document.getElementById('animal').addEventListener('change', async (event) =>{
     imagenAnimal = (preview.style.backgroundImage = `url(../assets/imgs/${tipoAnimal.imagen})`);
     seleccionAnimal = tipoAnimal.name;
     sonidoAnimal = tipoAnimal.sonido;
+    imagenAnimal = tipoAnimal.imagen;
+    console.log(imagenAnimal);
 });   
 
 //Capturar elmento en Select Años de edad estimados
@@ -48,6 +49,20 @@ comentarios.addEventListener('change', async() =>{
         }else if(seleccionAnimal === 'Aguila'){        
             animalIngresado = new Aguila(seleccionAnimal,edadAnimal,imagenAnimal,comentariosAnimal, sonidoAnimal);
         }
+
+// Cargar el animal instanciado en la seccion animales en investigacion
+let tablaAnimales = document.getElementById("Animales");
+console.log(`Este es el tipo de animal:${animalIngresado.nombre}`);
+console.log(`Este es la edad de animal:${animalIngresado.edad}`);
+//console.log(`Este es la URL de IMG de animal:${tipoAnimal.img}`);
+console.log(`Este es el comnetario para animal:${animalIngresado.comentarios}`);
+console.log(`Este es el URL de sonido para animal:${animalIngresado.sonido}`);
+
+
+tablaAnimales.innerHTML += `<article class = "col-4">
+<img class ="img-fluid" src= "assets/imgs/${animalIngresado.img}" alt="" srcset="">
+<button onclick = 'playSound(this.audioAnimal)' class ="w-100 btn  btn-secondary"><img src= assets/imgs/audio.svg height ="30" width="100"></button>
+</article>`;
 
 //Limpiar los select y campo
     document.getElementById("animal").value = "Seleccione un animal";
