@@ -1,4 +1,4 @@
-class Animal{
+export class Animal{
     #nombre;
     #edad;
     #img;
@@ -8,7 +8,7 @@ class Animal{
         this.#nombre = nombre;
         this.#edad = edad;
         this.#img = img;
-        this.#comentario = comentarios;
+        this.#comentarios = comentarios;
         this.#sonido = sonido;
     }
     get nombre(){
@@ -30,3 +30,4 @@ class Animal{
         return this.#sonido;
     }
 }
+export default {Animal};

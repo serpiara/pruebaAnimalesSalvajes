@@ -1,12 +1,18 @@
-import Animal from './animal';
-class Leon extends Animal{
+import {Animal} from './animal.js'
+// hay que usar los export Default en cada una de las clases, no instancia de otra forma
+export class Leon extends Animal{
     constructor(nombre,edad,img,comentarios,sonido){
         super (nombre,edad,img,comentarios,sonido);
     }
-    Rugir(){}
+    Rugir(){
+        //let audio = document.getElementById("player")
+        //audio.setAttribute("src", `assets/${this.sonido}`)
+        //audio.play();
+    }
 }
 
-class Lobo extends Animal{
+
+export class Lobo extends Animal{
     constructor(nombre,edad,img,comentarios,sonido){
         super (nombre,edad,img,comentarios,sonido);
     }
@@ -16,25 +22,26 @@ class Lobo extends Animal{
     }
 }
 
-class Oso extends Animal{
+export class Oso extends Animal{
     constructor(nombre,edad,img,comentarios,sonido){
         super (nombre,edad,img,comentarios,sonido);
     }
     Gruñir(){}
 }
 
-class Serpiente extends Animal{
+export class Serpiente extends Animal{
     constructor(nombre,edad,img,comentarios,sonido){
         super (nombre,edad,img,comentarios,sonido);
     }
     Sisear(){}
 }
 
-class Aguila extends Animal{
+export class Aguila extends Animal{
     constructor(nombre,edad,img,comentarios,sonido){
         super (nombre,edad,img,comentarios,sonido);
     }
     Chillar(){}
 }
 
-export{Leon,Lobo,Oso,Serpiente,Aguila};
+//export default {Leon, Lobo, Oso, Serpiente, Aguila};
+
